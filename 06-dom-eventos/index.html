@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="jumbotron">DOM y Eventos</h1>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h3 class="page-header">
+                                    Publicación
+                                </h3>
+                                <div class="form-group">
+                                    <label>Titulo</label>
+                                    <input 
+                                        data-target="#vista-previa-titulo"
+                                        data-target-slug="#vista-previa-slug"
+                                        id="titulo" type="text" name="titulo" class="form-control" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <textarea data-target="#vista-previa-descripcion" id="descripcion" name="descripcion" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contenido</label>
+                                    <textarea data-target="#vista-previa-contenido" rows="6" id="contenido" name="contenido" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Categoría</label>
+                                    <select data-target="#vista-previa-categoria" id="categoria" class="form-control">
+                                        <option value="1">Tecnología</option>
+                                        <option value="2">Deporte</option>
+                                        <option value="3">Cine</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label><input data-target="#vista-previa-publicar" id="publicar" type="checkbox" /> Publicar automáticamente
+                                </div>
+                                <button id="vistaPrevia" class="btn btn-block btn-default">Vista Previa</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <h3 class="page-header">Vista Previa</h3>
+                                <h4 id="vista-previa-titulo">Título</h4>
+                                <div class="form-group">
+                                    <b>Slug</b>: <em id="vista-previa-slug">http://anexsoft.com/mi-publicacion-url-1</em>
+                                </div>
+                                <p id="vista-previa-descripcion" class="form-group">Descripción de mi publicación</p>
+                                <div id="vista-previa-contenido" class="form-group">Contenido de mi publicación</div>
+                                <div class="form-group">
+                                    <b>Categoría</b>: <span id="vista-previa-categoria">Novedades</span>
+                                </div>
+                                <div class="form-group">
+                                    <b>Publicar después de guardar</b>: <span id="vista-previa-publicar">Si</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <hr />
+
+                    <div class="well well-sm text-center">
+                        Ejemplo realizado por <a href="http://anexsoft.com">Anexsoft</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+        <script>
+            var post = new Post(
+                '#titulo',
+                '#descripcion',
+                '#contenido',
+                '#categoria',
+                '#publicar',
+                '#vistaPrevia'
+            );
+        </script>
+    </body>
+</html>
