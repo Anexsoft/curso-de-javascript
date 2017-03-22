@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dom Avanzado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="jumbotron">DOM Avanzado</h1>
+                                
+                    <table id="dashboard" class="table table-stripped">
+                        <thead>
+                            <tr>
+                                <th># Vuelo</th>
+                                <th>Aerolínea</th>
+                                <th>Partida</th>
+                                <th>Destino</th>
+                                <th>Salida</th>
+                                <th>Llegada</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <hr />
+
+                    <div class="well well-sm text-center">
+                        Ejemplo realizado por <a href="http://anexsoft.com">Anexsoft</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js"></script>
+        <script>
+            var flights = [];
+
+            // Vuelo #1                
+            var s1 = new Date();
+            s1.setSeconds(s1.getSeconds() + 5);
+
+            var e1 = new Date();
+            e1.setSeconds(e1.getSeconds() + 10);
+
+            var f1 = new Flight(1, 'Taca', 'Lima/Peru', 'New York/Usa', s1, e1);
+
+            // Vuelo #2                
+            var s2 = new Date();
+            s2.setSeconds(s2.getSeconds() + 5);
+
+            var e2 = new Date();
+            e2.setHours(e2.getHours() + 10);
+
+            var f2 = new Flight(2, 'America Airline', 'Buenos Aires/Argentina', 'Ciudad Mexico/Mexico', s2, e2);
+
+            // Vuelo #2                
+            var s3 = new Date();
+            s3.setSeconds(s3.getSeconds() + 10);
+
+            var e3 = new Date();
+            e3.setHours(e3.getHours() + 25);
+
+            var f3 = new Flight(3, 'LATAM', 'Lima/Peru', 'Madrid/España', s3, e3);
+
+            flights.push(f1);
+            flights.push(f2);
+            flights.push(f3);
+
+            var dashboard = new Dashboard('#dashboard', flights);
+            dashboard.create();
+        </script>
+    </body>
+</html>

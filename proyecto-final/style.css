@@ -1,0 +1,8 @@
+body{padding:0;margin:0;background:#eee;font-family:Arial, Helvetica, sans-serif;}
+#dashboard{background:#222;color:#fff;height:40px;line-height:40px;text-align:center;}
+#start{padding:20px;margin:0;width:100%;}
+.hide{display:none;}
+
+#game{background:#333;position:relative;height:400px;}
+#npc {height:40px;display:block;position:absolute;top:0;left:0;}
+#npc img{height:100%;}
